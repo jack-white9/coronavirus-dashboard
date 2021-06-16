@@ -11,8 +11,6 @@ library(flexdashboard)
 library(ggplot2)
 library(tidyverse)
 library(plotly)
-library(lubridate)
-library(corrplot)
 library(scales)
 
 #IMPORTANT! The following two lines are REQUIRED for first use of coronavirus package or data will be outdated.
@@ -105,6 +103,8 @@ global_totcases_timeseries <- global_coronavirus %>%
   ylab('Cases') +
   xlab('Date') +
   scale_y_continuous(label = comma) +
+  scale_x_date(date_labels = '%b %Y', 
+               breaks = pretty_breaks(6)) +
   theme_light() +
   annotate(geom = 'text', 
            x = as.Date('2020-12-10'),
@@ -149,6 +149,8 @@ global_totdeaths_timeseries <- global_coronavirus %>%
   ylab('Deaths') +
   xlab('Date') +
   scale_y_continuous(label = comma) +
+  scale_x_date(date_labels = '%b %Y', 
+               breaks = pretty_breaks(6)) +
   theme_light()
 
 global_totdeaths_timeseries <- ggplotly(global_totdeaths_timeseries)
