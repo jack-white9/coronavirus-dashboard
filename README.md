@@ -1,6 +1,6 @@
 # Global Coronavirus Dashboard
 
-Already emerging as one of the most prominent issues of the decade, the COVID-19 pandemic has left an indisputable mark on the modern world with unprecedented measures like lockdowns, mask mandates, and travel bans shaping the beginning of the 2020s. As a result, it is impossible to ignore the significance of this event and the impact it has on our lives. This dashboard attempts to unpack some of the statistics surrounding the virus, including not only health data but also data related to population and government response in the hope of better understanding this once-in-a-lifetime event.
+Already emerging as one of the most prominent issues of the decade, the COVID-19 pandemic has left an indisputable mark on the modern world with unprecedented measures like lockdowns, mask mandates, and travel bans shaping the beginning of the 2020s. As a result, it is impossible to ignore the significance of this event and the impact it has on our lives. This dashboard attempts to unpack some of the statistics surrounding the virus in the hope of better understanding this once-in-a-lifetime event.
 
 This project uses the R coronavirus package created by Rami Krispin and Jarret Byrnes for all data included in the dashboard.
 
