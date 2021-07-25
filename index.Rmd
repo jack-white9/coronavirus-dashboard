@@ -13,21 +13,17 @@ library(ggplot2)
 library(tidyverse)
 library(plotly)
 library(scales)
-
-#IMPORTANT! The following two lines are REQUIRED for first use of coronavirus package or data will be outdated.
-#install.packages('devtools')
-#devtools::install_github('RamiKrispin/coronavirus') # Type '1' into console when prompted.
-library(coronavirus)
 ```
 
 ```{r}
-# DATA FOR VISUALISATION
-# Create dataframe containing world coronavirus data
-global_coronavirus <-  coronavirus %>%
+global_coronavirus <- read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus/master/csv/coronavirus.csv", stringsAsFactors = FALSE) %>%
   group_by(type, date) %>%
   summarise(total = sum(cases, na.rm = TRUE), .groups = 'keep') %>%
   pivot_wider(names_from = type, values_from = total) %>%
   arrange(date)
+
+global_coronavirus <- global_coronavirus %>%
+  mutate(date = as.Date(date, format = '%Y-%m-%d'))
 ```
 
 Visualisation {data-icon='fa-globe'}
